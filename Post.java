@@ -82,4 +82,13 @@ public class Post
         info += sec + " Seconds\n";
         return info;
     }
+    
+    
+    /*
+     * Devuelve el nobre del autor
+     */
+    public String getUsername()
+    {
+        return username;
+    }
 }
