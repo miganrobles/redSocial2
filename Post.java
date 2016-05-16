@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 /**
  * Write a description of class Post here.
@@ -11,17 +10,15 @@ public class Post
     private String username;
     private long timestamp;
     private int likes;
-    private ArrayList<String> comments;
 
     /**
      * Constructor for objects of class Post
      */
     public Post(String author)
     {
-       this.username = author;
-       this.timestamp = System.currentTimeMillis();
-       likes = 0;
-       comments = new ArrayList<>();
+        username = author;
+        timestamp = System.currentTimeMillis();
+        likes = 0;
     }
 
     /**
@@ -30,46 +27,34 @@ public class Post
     public void like(){
         likes++;
     }
-    
+
     /**
      * Metodo para quitar un like en caso de que los haya.
      */
     public void unlike(){
-        if(likes != 0)
-           likes--; 
+        if(likes > 0)
+            likes--; 
     }
-    
-    /**
-     * Metodo para añadir un comentario al post
-     */
-    public void addComment(String text){
-        comments.add(text);
-    }
-    
+
     /**
      * Metodo que devuelve la estampa de tiempo en el momento de crear el post
      */
     public long getTimeStamp(){
         return timestamp;
     }
-    
+
     /**
      * Metodo que muestra toda la info del post
      */
     public void display(){
         String info = "";
-        long time = System.currentTimeMillis() - getTimeStamp();
+        long time = System.currentTimeMillis() - timestamp;
         info += username + "\n=====================\n" + "Posted: ";
         info += timeString(time);
         info += "_____________________\nLikes: " + likes + "\n=====================\n\n";
-        if(comments.size() != 0)
-            for(int i=0; i<comments.size(); i++)
-                info += comments.get(i) + "\n_____________________\n";
-        else
-            info += "Sin comentarios";
         System.out.println(info);
     }
-    
+
     /**
      * Metodo para pasar el tiempo a minutos y segundos.
      */
@@ -82,8 +67,7 @@ public class Post
         info += sec + " Seconds\n";
         return info;
     }
-    
-    
+
     /*
      * Devuelve el nobre del autor
      */

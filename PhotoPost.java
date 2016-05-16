@@ -1,12 +1,12 @@
-
 import java.util.ArrayList;
+
 /**
  * Write a description of class MessagePost here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class PhotoPost extends Post
+public class PhotoPost extends CommentPost
 {
     private String filename;
     private String caption;
@@ -22,14 +22,14 @@ public class PhotoPost extends Post
     }
 
     /**
-     * Meotdo que devuelve el nombre del archivo
+     * Metodo que devuelve el nombre del archivo
      */
     public String getImageFile(){
         return filename;
     }
 
     /**
-     * Metodo que devuelve el mensaje del post
+     * Metodo que devuelve el comentario del archivo de imagen
      */
     public String getCaption(){
         return caption;
