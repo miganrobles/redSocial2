@@ -10,6 +10,7 @@ public class NewsFeed
 {
     private ArrayList<MessagePost> messages;
     private ArrayList<PhotoPost> photos;
+    private ArrayList<JoinGroupPost> grupoPosts;
 
     /**
      * Constructor for objects of class NewsFeed
@@ -18,6 +19,8 @@ public class NewsFeed
     {
         messages = new ArrayList<>();
         photos = new ArrayList<>();
+        grupoPosts = new ArrayList<>();
+        
     }
 
     /**
@@ -41,6 +44,16 @@ public class NewsFeed
     }
     
     /**
+     * Add a post with a message
+     * 
+     * @message the message to introduce
+     */
+    public void addGrupoPost(JoinGroupPost grupoPost)
+    {
+        grupoPosts.add(grupoPost);
+    }
+    
+    /**
      * Show the post
      */
     public void show(){
@@ -49,6 +62,9 @@ public class NewsFeed
         }
         for(PhotoPost photo : photos){
             photo.display();
+        }
+        for(JoinGroupPost grupoPost : grupoPosts){
+            grupoPost.display();
         }
     }
 }
